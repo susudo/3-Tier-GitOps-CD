@@ -1,4 +1,4 @@
-# Fichier : simple-azure-disk-sc.yaml
+# Fichier : azure-disk-sc.yaml
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
