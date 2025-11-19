@@ -97,7 +97,7 @@ spec:
                   name: mysql-config
                   key: MYSQL_DATABASE
           volumeMounts:
-            - name: mysql-persistent-storage
+            - name: pvc-test
               mountPath: /var/lib/mysql
             - name: initdb
               mountPath: /docker-entrypoint-initdb.d
@@ -107,10 +107,10 @@ spec:
             name: mysql-initdb-config
   volumeClaimTemplates:
     - metadata:
-        name: mysql-persistent-storage
+        name: pvc-test
       spec:
         accessModes: [ "ReadWriteOnce" ]
         storageClassName: azure-disk-sc
         resources:
           requests:
-            storage: 5Gi
+            storage: 10Gi
