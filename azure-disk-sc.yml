@@ -1,0 +1,11 @@
+# Fichier : simple-azure-disk-sc.yaml
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: azure-disk-sc
+provisioner: disk.csi.azure.com   # CSI driver Azure (installé par défaut sur AKS)
+allowVolumeExpansion: true
+volumeBindingMode: WaitForFirstConsumer
+parameters:
+  skuName: StandardSSD_LRS        # Disque SSD standard (le moins cher, parfait pour tester)
+reclaimPolicy: Delete
